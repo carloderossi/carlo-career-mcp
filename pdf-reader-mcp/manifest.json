@@ -1,0 +1,51 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/mcpb/main/dist/mcpb-manifest.schema.json",
+  "manifest_version": "0.2",
+  "name": "carlo-career-mcp",
+  "display_name": "Carlo Career Assistant",
+  "version": "1.0.0",
+  "description": "Access Carlo's career documents, answer questions, and search jobs in Zurich",
+  "long_description": "This extension provides access to Carlo's career PDF documents, intelligent Q&A capabilities, and live job search in Zurich using the Adzuna API. It demonstrates Node.js-based MCP Bundle development with file operations and API integration.",
+  "author": {
+    "name": "Carlo De Rossi"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "build/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/build/index.js"
+      ],
+      "env": {
+        "PDF_DIRECTORY": "C:\\Carlo\\Curriculum"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "list_pdfs",
+      "description": "List all PDF files in the career documents directory"
+    },
+    {
+      "name": "read_pdf",
+      "description": "Read and extract text from a specific PDF file"
+    },
+    {
+      "name": "get_pdf_metadata",
+      "description": "Get metadata about a PDF file (page count, author, etc.)"
+    },
+    {
+      "name": "search_pdfs",
+      "description": "Search for PDFs by filename"
+    },
+    {
+      "name": "answer_career_question",
+      "description": "Answer questions about career documents using AI search"
+    },
+    {
+      "name": "search_zurich_jobs",
+      "description": "Search for jobs in Zurich using Adzuna API"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "carlo-career-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Carlo's career documents and job search",
+  "type": "module",
+  "main": "./build/index.js",
+  "bin": {
+    "carlo-career-mcp": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "node build/index.js",
+    "dev": "tsc && node build/index.js"
+  },
+  "keywords": ["mcp", "pdf", "career", "jobs", "claude"],
+  "author": "Carlo De Rossi",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.1",
+    "pdf-parse": "^2.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "@types/pdf-parse": "^1.1.4",
+    "typescript": "^5.9.3"
+  }
+}
