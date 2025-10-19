@@ -13,11 +13,18 @@
     "start": "node build/index.js",
     "dev": "tsc && node build/index.js"
   },
-  "keywords": ["mcp", "pdf", "career", "jobs", "claude"],
+  "keywords": [
+    "mcp",
+    "pdf",
+    "career",
+    "jobs",
+    "claude"
+  ],
   "author": "Carlo De Rossi",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.1",
+    "dotenv": "^17.2.3",
     "pdf-parse": "^2.4.3"
   },
   "devDependencies": {

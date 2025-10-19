@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import dotenv from "dotenv";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { CallToolRequestSchema, ListToolsRequestSchema, ListResourcesRequestSchema, ReadResourceRequestSchema, } from "@modelcontextprotocol/sdk/types.js";
@@ -15,9 +16,11 @@ async function getPdfParse() {
     return pdfParse;
 }
 // Configuration
+// Load environment variables from .env file
+dotenv.config();
+const ADZUNA_APP_ID = process.env.ADZUNA_APP_ID;
+const ADZUNA_API_KEY = process.env.ADZUNA_API_KEY;
 const WATCHED_DIRECTORY = process.env.PDF_DIRECTORY || process.argv[2] || "C:\\Carlo\\Curriculum";
-const ADZUNA_APP_ID = "a398784";
-const ADZUNA_API_KEY = "e76f2cc0050ae1620b9eb66a33ff79d8";
 // Server setup
 const server = new Server({
     name: "carlo-career-mcp",
